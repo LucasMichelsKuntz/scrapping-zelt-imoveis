@@ -21,6 +21,9 @@ class Emissor():
         return headers
     
     def retorna_imoveis(self):
+        """
+        Esta função retorna os elementos HTML com as informações dos imoveis.
+        """
         try:
             headers = self.seta_headers()
             url = f"https://www.zelt.com.br/imoveis/para-{self.dados.tipo_contrato}/\
@@ -39,6 +42,9 @@ class Emissor():
             Logger.erro(f'Ocorreu um erro ao extrair imoveis do site.\n {e}')
 
     def extrai_dados_imoveis(self,imoveis):
+        """
+        Esta função é encarregada de gerar o CSV com as colunas correspondentes, no diretório /csv
+        """
         try:
             csv_path = os.path.join( os.path.join(os.getcwd(), 'csv') , 'imoveis.csv')
             with open(csv_path, mode='w', newline='', encoding='utf-8') as file:
@@ -66,6 +72,9 @@ class Emissor():
             Logger.erro(f"Ocorreu um erro ao extrair dados dos imoveis para o CSV!\n {e}")
 
     def iniciar_busca(self):
+        """
+        Essa função executa todas as outras, unificando-as.
+        """
         Logger.debug("Parâmetros de busca:")
         for key, value in self.dados.__dict__.items():
             Logger.debug(f"{key}: {value}")        

@@ -8,6 +8,7 @@ if __name__ == "__main__":
         dados_emissao = DadosEmissao()
         emissor = Emissor(dados_emissao)
         emissor.iniciar_busca()
+        
     except Exception as e:
         Logger.erro('Erro ao extrair dados do site. Seguem dados para teste:\n')
         Logger.erro(emissor.dados)
