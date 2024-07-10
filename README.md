@@ -1,4 +1,4 @@
-Este projeto contém scripts para raspagem de dados do site da zelt.
+Este projeto contém scripts para raspagem de dados do site da Zelt Imovéis.
 
 Em primeiro momento, foram parametrizados dados base para as requisições, na classe DadosEmissao. Porém, caso necessário pode ser parametrizável.
 Busca por apartamentos que contenham:
