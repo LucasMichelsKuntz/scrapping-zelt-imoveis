@@ -6,7 +6,4 @@ services:
     build: .
     volumes:
       - ./csv:/app/csv
-    environment:
-      - DISPLAY=:0
-      - PYTHONUNBUFFERED=1
     command: python /app/main.py
