@@ -16,5 +16,5 @@ Busca por apartamentos que contenham:
 . Tipo contrato;
 . Tipo do imovél.
 
-Para rodar o script basta instalar as dependências e utilizar o comando python3 main.py (É necessário o python 3.10.2+), ou buildar e rodar a dockerfile,
-que a primeiro momento não utiliza volumes para transporte do CSV para fora do contâiner.
+Para rodar o script basta instalar as dependências e utilizar o comando python3 main.py (É necessário o python 3.10.2+), ou buildar e rodar o docker-compose,
+que utiliza volumes para transporte do CSV para fora do contâiner.
