@@ -1,20 +1,52 @@
-Este projeto contém scripts para raspagem de dados do site da Zelt Imovéis.
 
-Em primeiro momento, foram parametrizados dados base para as requisições, na classe DadosEmissao. Porém, caso necessário pode ser parametrizável.
-Busca por apartamentos que contenham:
-. 1 Quartos +;
-. Tipo de contrato para aluguel;
-. valor máximo de 1800 reais.
+Projeto de Raspagem de Dados - Zelt Imóveis
+Este projeto contém scripts para raspagem de dados do site da Zelt Imóveis. Ele busca por apartamentos disponíveis para aluguel, filtrados de acordo com parâmetros específicos, e gera um arquivo CSV com os detalhes dos imóveis encontrados.
 
-É gerado um CSV com:
-. Endereço;
-. Tamanho em metros quadrados;
-. Quantidade de quartos;
-. Quantidade de suítes;
-. Quantidade de banheiros;
-. Preço;
-. Tipo contrato;
-. Tipo do imovél.
+Parâmetros de Busca
+Os parâmetros de busca são definidos na classe DadosEmissao e incluem:
 
-Para rodar o script basta instalar as dependências e utilizar o comando python3 main.py (É necessário o python 3.10.2+), ou buildar e rodar o docker-compose que possui o nome de emissor,
-que utiliza volumes para transporte do CSV para fora do contâiner.
+Número de Quartos: 1 ou mais
+Tipo de Contrato: Aluguel
+Valor Máximo: 1800 reais
+Dados Gerados
+O script gera um arquivo CSV com as seguintes informações sobre os imóveis encontrados:
+
+Endereço
+Tamanho (em metros quadrados)
+Quantidade de Quartos
+Quantidade de Suítes
+Quantidade de Banheiros
+Preço
+Tipo de Contrato
+Tipo do Imóvel
+Requisitos
+Python 3.10.2 ou superior
+Docker (opcional, para execução via contêiner)
+
+Instalação e Execução
+
+Executar o Script Diretamente
+Instale as dependências:
+pip install -r requirements.txt
+
+Execute o script:
+python3 main.py
+
+Executar com Docker Compose
+Construa e inicie os serviços definidos no docker-compose.yml:
+docker-compose up --build
+
+Estrutura do Projeto
+project-root/
+│
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── main.py
+├── base/
+│   └── DadosEmissao.py
+├── scripts/
+│   └── emissor.py
+└── csv/
+    └── (arquivos CSV gerados)
+
